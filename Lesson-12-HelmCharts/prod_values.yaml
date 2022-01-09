@@ -1,0 +1,4 @@
+container:
+  image: timurit/k8sphp:version2
+
+replicaCount: 4

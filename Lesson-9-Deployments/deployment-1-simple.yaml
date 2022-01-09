@@ -1,0 +1,20 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: my-web-deployment
+  labels:
+    app : my-k8s-application
+spec:
+  selector:
+    matchLabels:
+      project: myproject-1
+  template:
+    metadata:
+      labels:
+        project: myproject-1
+    spec:
+      containers:
+        - name : myproject-1-web
+          image: timurit/k8sphp:latest
+          ports:
+            - containerPort: 80
